@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Syntax Guide</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            /* margin-top: 0px !important; */
+            background-color: white;
+            line-height: 1.6;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: rgb(243 244 246);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(200, 200, 200, 0.6); /* Light grey shadow */
+        }
+        ul {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>HTML & CSS Syntax Guide</h2>
+
+    <h3>1. Basic HTML Structure</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h3>2. Common HTML Elements</h3>
+
+    <h4>2.1 Headings</h4>
+    <pre>
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+    </pre>
+
+    <h4>2.2 Paragraphs & Links</h4>
+    <pre>
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;a href="https://www.example.com"&gt;Click Here&lt;/a&gt;
+    </pre>
+
+    <h4>2.3 Lists</h4>
+    <pre>
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+
+    <h4>2.4 Tables</h4>
+    <pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+
+    <h4>2.5 Forms & Inputs</h4>
+    <pre>
+&lt;form action="submit.php" method="POST"&gt;
+    &lt;label&gt;Name:&lt;/label&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h3>3. Introduction to CSS</h3>
+
+    <h4>3.1 Types of CSS</h4>
+
+    <h4>✔ Inline CSS</h4>
+    <p>Applied directly to an HTML element using the <code>style</code> attribute.</p>
+    <pre>
+&lt;p style="color: blue; font-size: 20px;"&gt;This is inline CSS&lt;/p&gt;
+    </pre>
+
+    <h4>✔ Internal CSS</h4>
+    <p>Defined inside a <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code> section.</p>
+    <pre>
+&lt;style&gt;
+    p {
+        color: red;
+        font-size: 18px;
+    }
+&lt;/style&gt;
+    </pre>
+
+    <h4>✔ External CSS</h4>
+    <p>Stored in a separate file and linked using the <code>&lt;link&gt;</code> tag.</p>
+    <pre>
+&lt;link rel="stylesheet" href="styles.css"&gt;
+    </pre>
+
+    <h3>4. CSS Basics</h3>
+
+    <h4>4.1 CSS Selectors</h4>
+
+    <h4>✔ Element Selector</h4>
+    <pre>
+h1 {
+    color: blue;
+}
+    </pre>
+
+    <h4>✔ Class Selector</h4>
+    <pre>
+.highlight {
+    background-color: yellow;
+}
+    </pre>
+
+    <h4>✔ ID Selector</h4>
+    <pre>
+#main {
+    font-size: 20px;
+}
+    </pre>
+
+    <h4>✔ Grouping Selectors</h4>
+    <pre>
+h1, p {
+    color: red;
+}
+    </pre>
+
+    <h3>5. Box Model</h3>
+    <pre>
+.box {
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 20px;
+}
+    </pre>
+
+    <h3>6. Flexbox Layout</h3>
+    <pre>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    </pre>
+
+    
+
+</body>
+</html>

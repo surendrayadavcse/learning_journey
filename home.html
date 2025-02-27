@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.profile-container {
+    background: white;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: fill;
+    margin-bottom: 10px;
+    margin-left: 25%;
+}
+.profile-img1 {
+    width: 250px;
+    height: 200px;
+    border-radius: 5%;
+    object-fit: fill;
+    margin-bottom: 10px;
+    /* margin-left: 25%; */
+    margin-top: 10px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <h2> My  Learning Journey</h2>
+
+            <h3>✅ Completed</h3>
+            <ul>
+                <li><input type="checkbox" checked disabled> Computer Fundamentals</li>
+                <li><input type="checkbox" checked disabled> Git & GitHub</li>
+                <li><input type="checkbox" checked disabled> HTML & CSS</li>
+                <li><input type="checkbox" checked disabled> Oracle & MongoDB</li>
+            </ul>
+
+            <h3>⬜ In Progress / Upcoming</h3>
+            <ul>
+                <li><input type="checkbox" disabled> Core Java (OOP, Collections, Streams)</li>
+                <li><input type="checkbox" disabled> Java Frameworks (Spring Boot)</li>
+                <li><input type="checkbox" disabled> REST API Development</li>
+                <li><input type="checkbox" disabled> JavaScript Basics</li>
+                <li><input type="checkbox" disabled> React.js & State Management</li>
+                <li><input type="checkbox" disabled> Redux Toolkit</li>
+                <li><input type="checkbox" disabled> Authentication & Authorization</li>
+                <li><input type="checkbox" disabled> Cloud Computing (Azure/AWS)</li>
+                <li><input type="checkbox" disabled> DevOps & CI/CD</li>
+            </ul>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-container">
+          
+            <img src="./my.jpg" alt="Profile Image" class="profile-img">
+        
+            <h3>Nandyala Venkata Surendra</h3>
+            <p><strong>Contact:</strong> +91 8247380327</p>
+            <p><strong>Email:</strong> venkatasurendra70@gmail.com</p>
+            <p><strong>Program:</strong> Diksha Sundaram Fin.Tech Programme</p>
+            <img class="profile-img1" src="image.png.webp">
+        </div>
+    </div>
+
+</body>
+</html>

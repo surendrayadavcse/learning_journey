@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PL/SQL Syntax Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            margin: 20px;
+            background-color: white;
+            line-height: 1.6;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: rgb(243 244 246);    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(200, 200, 200, 0.6); /* Light grey shadow */
+        }
+        ul {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>1. What is Oracle Database?</h3>
+    <p>Oracle Database is a powerful relational database management system (RDBMS) that uses **SQL** for querying and **PL/SQL** for programming.</p>
+    <h3>SQL Command Types</h3>
+    <ul>
+        <li><strong>DDL (Data Definition Language):</strong> CREATE, ALTER, DROP, TRUNCATE</li>
+        <li><strong>DML (Data Manipulation Language):</strong> INSERT, UPDATE, DELETE</li>
+        <li><strong>DQL (Data Query Language):</strong> SELECT</li>
+        <li><strong>DCL (Data Control Language):</strong> GRANT, REVOKE</li>
+        <li><strong>TCL (Transaction Control Language):</strong> COMMIT, ROLLBACK, SAVEPOINT</li>
+    </ul>
+    
+   
+    <h3>1. PL/SQL Block Structure</h3>
+    <pre>
+DECLARE
+    -- Variable declarations
+BEGIN
+    -- Executable statements
+EXCEPTION
+    -- Exception handling
+END;
+/
+    </pre>
+
+    <h3>2. Anonymous Block</h3>
+    <pre>
+DECLARE 
+    v_name VARCHAR2(50);
+BEGIN
+    v_name := 'John Doe';
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_name);
+END;
+/
+    </pre>
+
+    <h3>3. Conditional Statements</h3>
+    <pre>
+DECLARE
+    v_salary NUMBER := 50000;
+BEGIN
+    IF v_salary > 40000 THEN
+        DBMS_OUTPUT.PUT_LINE('High Salary');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Low Salary');
+    END IF;
+END;
+/
+    </pre>
+
+    <h3>4. Looping Statements</h3>
+
+    <h4>4.1 FOR Loop</h4>
+    <pre>
+BEGIN
+    FOR i IN 1..5 LOOP
+        DBMS_OUTPUT.PUT_LINE('Iteration: ' || i);
+    END LOOP;
+END;
+/
+    </pre>
+
+    <h4>4.2 WHILE Loop</h4>
+    <pre>
+DECLARE
+    v_counter NUMBER := 1;
+BEGIN
+    WHILE v_counter <= 5 LOOP
+        DBMS_OUTPUT.PUT_LINE('Count: ' || v_counter);
+        v_counter := v_counter + 1;
+    END LOOP;
+END;
+/
+    </pre>
+
+    <h3>5. Stored Procedure Syntax</h3>
+    <pre>
+CREATE OR REPLACE PROCEDURE Procedure_Name
+IS
+BEGIN
+    -- Procedure logic here
+END Procedure_Name;
+/
+    </pre>
+
+    <h4>Example: Creating and Executing a Stored Procedure</h4>
+    <pre>
+CREATE OR REPLACE PROCEDURE GetEmployeeName(p_emp_id NUMBER) AS
+    v_name VARCHAR2(50);
+BEGIN
+    SELECT emp_name INTO v_name FROM employees WHERE emp_id = p_emp_id;
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_name);
+END;
+/
+//
+BEGIN
+    GetEmployeeName(100); -- Pass the Employee ID
+END;
+    </pre>
+
+    <h3>6. Function Syntax</h3>
+    <pre>
+CREATE OR REPLACE FUNCTION Function_Name RETURN RETURN_TYPE
+IS
+BEGIN
+    -- Function logic here
+    RETURN value;
+END Function_Name;
+/
+    </pre>
+
+    <h4>Example: Creating and Calling a Function</h4>
+    <pre>
+CREATE OR REPLACE FUNCTION GetSalary(p_emp_id NUMBER) RETURN NUMBER AS
+    v_salary NUMBER;
+BEGIN
+    SELECT salary INTO v_salary FROM employees WHERE emp_id = p_emp_id;
+    RETURN v_salary;
+END;
+/
+
+DECLARE
+    v_result NUMBER;
+BEGIN
+    v_result := GetSalary(100); -- Pass the Employee ID
+    DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || v_result);
+END;
+    </pre>
+
+    <h3>7. Triggers</h3>
+    <pre>
+CREATE OR REPLACE TRIGGER trigger_name
+BEFORE | AFTER INSERT OR UPDATE OR DELETE ON table_name
+FOR EACH ROW
+BEGIN
+    -- Trigger logic here
+END;
+/
+    </pre>
+
+    <h4>Example: Creating a Trigger</h4>
+    <pre>
+CREATE OR REPLACE TRIGGER trg_salary_check
+BEFORE INSERT OR UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    IF :NEW.salary < 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Salary cannot be negative!');
+    END IF;
+END;
+/
+    </pre>
+
+    
+
+</body>
+</html>
